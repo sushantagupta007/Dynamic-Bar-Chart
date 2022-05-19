@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="total"></div>
+
+
+
+    <script type=text/javascript>
+   const ids = ["b1", "b2", "b3", "b4", "b5", "b6", "b7"];
+        function graphIt() {
+            var myValue = [];
+            let i= 0
+            ids.map((item)=>{
+                console.log(item)
+            i++
+            let obj= {}
+                obj[item] = Math.round(Math.random() * 10)+i
+                myValue.push(obj)
+            })
+            console.log(myValue)
+        }
+
+        graphIt();
+
+    </script>
+</body>
+
+</html>

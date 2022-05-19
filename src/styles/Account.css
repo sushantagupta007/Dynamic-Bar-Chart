@@ -1,0 +1,85 @@
+.account--outer {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  margin: 0px auto;
+  width: 75%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: rgba(192, 184, 184, 0.4);
+}
+
+.account--inner__bg {
+  background-image: url("../Image/bg.PNG");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #faf8f8;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0rem 1rem 1rem;
+  border-radius: 5px;
+}
+
+.account--inner--form {
+  margin: 1rem 1rem 1rem 0.25rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.account--form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 3rem;
+}
+
+#account--inner__text {
+  text-align: center;
+  padding: 0px 0.5rem;
+  margin-top: 0rem;
+}
+
+.account--form__style {
+  padding: 0.5rem 0rem;
+  margin: 0.5rem 0rem;
+  border-radius: 5px;
+}
+
+#account--btn {
+  background-color: #008ab8;
+  color: white;
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 0px;
+  margin-top: 0.5rem;
+}
+
+#account--btn:hover {
+  background-color: #029bce;
+  border: 1px solid #174d5f;
+  cursor: pointer;
+  -webkit-box-shadow: 5px;
+          box-shadow: 5px;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=Account.css.map */

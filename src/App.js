@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import "./App.css";
+import Account from "./component/Account";
+import Chart from "./component/Chart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Account />} />
+        <Route
+          exact
+          path="/mychart"
+          element={<Chart width={600} height={400} />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
