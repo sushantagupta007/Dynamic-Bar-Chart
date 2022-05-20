@@ -1,12 +1,13 @@
-#BarChart { 
-    display: flex; 
-    flex-direction: row; /* Arrange the Bars Horizontally using FlexBox  */
-    align-items: flex-end; /* Have the bars start at the bottom and go up */
-    justify-content: center; /* Center the bars in the middle of the screen */
-    margin: 50px;
-  }
-  
-  .bar {
-    background-color: #3aa70f; /* Have each bar be a nice green */
-    width: 10px; /* The animation will start with each bar being 10px wide, and then expand outwards */
-  }
+#BarChart {
+  display: flex;
+  flex-direction: column; /* Arrange the Bars Horizontally using FlexBox  */
+  align-items: center; /* Have the bars start at the bottom and go up */
+  justify-content: center; /* Center the bars in the middle of the screen */
+  margin: 50px auto;
+  width: 50%;
+}
+
+.bar {
+  fill: #3aa70f; /* Have each bar be a nice green */
+  width: 10px; /* The animation will start with each bar being 10px wide, and then expand outwards */
+}

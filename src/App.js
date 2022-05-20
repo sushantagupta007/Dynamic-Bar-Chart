@@ -14,7 +14,7 @@ function App() {
         <Route
           exact
           path="/mychart"
-          element={<Chart width={600} height={400} />}
+          element={<Chart width={800} height={400} />}
         />
       </Routes>
     </BrowserRouter>

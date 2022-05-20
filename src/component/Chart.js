@@ -1,14 +1,24 @@
+/* eslint-disable no-undef */
 /* eslint-disable array-callback-return */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-unused-vars */
 import * as d3 from "d3";
 import { useEffect, useState } from "react";
+import "../styles/chart.css";
 
 const Chart = (props) => {
   const { width, height } = props;
   const [data, setData] = useState([]);
 
-  const ids = ["b1", "b2", "b3", "b4", "b5", "b6", "b7"];
+  const ids = [
+    "physics",
+    "chemistry",
+    "biology",
+    "math",
+    "history",
+    "geography",
+    "botany",
+  ];
   function graphIt() {
     const myValue = [];
     ids.map((item) => {
@@ -19,7 +29,6 @@ const Chart = (props) => {
       myValue.push(obj);
       setData(myValue);
     });
-    return myValue;
   }
   let myArray = [];
   const handleClick = () => {
@@ -33,10 +42,11 @@ const Chart = (props) => {
       .select("#histogram")
       .append("svg")
       .style("background-color", "white")
+
       .attr("width", width)
       .attr("height", height)
-      .append("g")
-      .attr("transform", `translate(0,-${margin.bottom - 10})`);
+      .append("g");
+    // .attr("transform", `translate(0,-${margin.bottom - 10})`);
 
     // create the x axis scale, scaled to the states
     const xScale = d3
@@ -48,14 +58,14 @@ const Chart = (props) => {
     // create the y axis scale, scaled from 0 to the max
     const yScale = d3
       .scaleLinear()
-      .domain([0, d3.max(data, (d) => d.score)])
+      .domain([0, d3.max(data, (d) => d.score + 3)])
       .range([height - margin.bottom, margin.top]);
 
     // create a scale between colors that varies by the frequency
     const barColors = d3
       .scaleLinear()
       .domain([0, d3.max(data, (d) => d.score)])
-      .range(["blue", "red", "blue"]);
+      .range(["blue", "red", "green"]);
 
     // set the x axis on the bottom.
     // tilts the axis text so it's readable and not smushed.
@@ -65,9 +75,10 @@ const Chart = (props) => {
       .call(d3.axisBottom(xScale))
       .selectAll("text")
       .style("text-anchor", "end")
+      .style("font-size", "15px")
       .attr("dx", "-.8em")
-      .attr("dy", ".15em")
-      .attr("transform", "rotate(-65)");
+      .attr("dy", ".2em")
+      .attr("transform", "rotate(-40)");
 
     // set the y axis on the left
     svg
@@ -80,7 +91,7 @@ const Chart = (props) => {
     // sets the height according to the yscale
     // static bar width, color is scaled on the y axis
     // finally the bars have an outline
-    const bars = svg
+    svg
       .selectAll("rect")
       .data(data)
       .enter()
@@ -89,7 +100,7 @@ const Chart = (props) => {
       .attr("y", (d) => yScale(d.score))
       .attr("width", xScale.bandwidth())
       .attr("height", (d) => yScale(0) - yScale(d.score))
-      .style("padding", "3px")
+      .style("padding", "2px")
       .style("margin", "1px")
       .style("width", (d) => `${d * 10}px`)
       .attr("fill", function (d) {
@@ -100,21 +111,18 @@ const Chart = (props) => {
   };
 
   useEffect(() => {
-    // myArray = myData.map((item) => Object.values(item)[0]);
-
     if (data.length > 0) {
-      console.log("number 1");
       drawChart();
     } else {
       graphIt();
-      console.log("number 2");
     }
+    return () => {};
   }, [data]);
 
-  console.log(data);
-
   return (
-    <div>
+    <div id="BarChart">
+      <h1> Bar Digram </h1>
+      <p> Dynamic Data</p>
       <div id="histogram"></div>
       <button type="button" onClick={handleClick}>
         Change Data

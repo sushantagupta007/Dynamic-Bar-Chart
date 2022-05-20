@@ -2,24 +2,25 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   /* Arrange the Bars Horizontally using FlexBox  */
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* Have the bars start at the bottom and go up */
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   /* Center the bars in the middle of the screen */
-  margin: 50px;
+  margin: 50px auto;
+  width: 50%;
 }
 
 .bar {
-  background-color: #3aa70f;
+  fill: #3aa70f;
   /* Have each bar be a nice green */
   width: 10px;
   /* The animation will start with each bar being 10px wide, and then expand outwards */
